@@ -71,8 +71,8 @@ public class HomeActivity extends AppCompatActivity
 
 
         lstSlides = new ArrayList<>();
-        lstSlides.add(new Slide(R.drawable.slide1, "Slide Diaa Title \nmore text here"));
-        lstSlides.add(new Slide(R.drawable.slide2, "Slide Title \nmore text here"));
+        lstSlides.add(new Slide(R.drawable.slide1, "Slide Title \nmore text here"));
+        lstSlides.add(new Slide(R.drawable.slide2, "Slide Diaa Title \nmore text here"));
         lstSlides.add(new Slide(R.drawable.slide1, "Slide Title \nmore text here"));
         lstSlides.add(new Slide(R.drawable.slide2, "Slide Title \nmore text here"));
         SliderPagerAdapter adapter = new SliderPagerAdapter(this, lstSlides);
