@@ -69,7 +69,6 @@ public class HomeActivity extends AppCompatActivity
         MoviesRV = findViewById(R.id.Rv_movies);
         MoviesRV2 = findViewById(R.id.Rv_movies2);
 
-
         lstSlides = new ArrayList<>();
         lstSlides.add(new Slide(R.drawable.slide1, "Slide Title \nmore text here"));
         lstSlides.add(new Slide(R.drawable.slide2, "Slide Diaa Title \nmore text here"));
