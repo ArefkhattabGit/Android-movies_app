@@ -82,6 +82,7 @@ public class HomeActivity extends AppCompatActivity
         sliderpager.setAdapter(adapter);
 
         //said esleem 2021
+        // aref
 
         Data();
         //
