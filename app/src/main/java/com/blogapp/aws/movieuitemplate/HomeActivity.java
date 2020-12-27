@@ -77,6 +77,7 @@ public class HomeActivity extends AppCompatActivity
         SliderPagerAdapter adapter = new SliderPagerAdapter(this, lstSlides);
         sliderpager.setAdapter(adapter);
 
+        //said esleem 2021
 
         Data();
         //
