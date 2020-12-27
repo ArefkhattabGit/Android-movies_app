@@ -27,6 +27,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.gson.JsonObject;
 
 import org.json.JSONArray;
@@ -46,7 +47,8 @@ public class HomeActivity extends AppCompatActivity
     private RecyclerView MoviesRV, MoviesRV2;
     MyMoviesAdapter myMoviesAdapter;
     MyMoiveClass myMoiveClas;
-
+    String username;
+    String gmail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +56,9 @@ public class HomeActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        Intent i =  getIntent();
+        username = i.getStringExtra("username");
+        gmail    = i.getStringExtra("gmail");
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -155,11 +159,16 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_profile) {
-            // Handle the camera action
+            Intent  intent = new Intent(getApplicationContext() ,ProfileActivity.class);
+            intent.putExtra("username" , username);
+            intent.putExtra("gmail" , gmail);
+            startActivity(intent);
         } else if (id == R.id.nab_favorite) {
 
         } else if (id == R.id.nav_logout) {
+            FirebaseAuth.getInstance().signOut();
 
+            startActivity(new Intent(HomeActivity.this, LoginActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

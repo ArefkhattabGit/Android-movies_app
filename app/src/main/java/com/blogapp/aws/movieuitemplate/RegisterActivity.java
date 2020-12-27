@@ -90,6 +90,8 @@ public class RegisterActivity extends AppCompatActivity {
                                             public void onSuccess(Void aVoid) {
 
                                                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                                                intent.putExtra("username" , username);
+                                                intent.putExtra("gmail" , email);
                                                 startActivity(intent);
                                                 finish();
 
